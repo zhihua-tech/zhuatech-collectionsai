@@ -1,4 +1,4 @@
-/* Copyright 2026 上海如静知华信息科技有限公司 */
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 export const domain={
  code:'COLLECTIONSAI',systemName:'知华应收催收智能体',englishName:'AI COLLECTIONS WORKBENCH',theme:{primary:'#42644f',dark:'#24372d',accent:'#b9823f'},
  workspace:'集团财务中心 / 应收管理部',fieldWorkspace:'华东应收组 / 催收工作台',period:'2026-08-17 · 月中回款周期',liveText:'应收余额于 14:20 更新',fieldContextLabel:'当前组合',fieldContext:'华东区 · 企业客户',fieldUser:'陈望',fieldRole:'催收专员',adminUser:'叶宁',adminRole:'应收平台主管',
