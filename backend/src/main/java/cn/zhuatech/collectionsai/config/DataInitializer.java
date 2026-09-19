@@ -1,7 +1,13 @@
 /* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 package cn.zhuatech.collectionsai.config;
 import cn.zhuatech.collectionsai.model.*; import cn.zhuatech.collectionsai.repository.*; import org.springframework.boot.CommandLineRunner; import org.springframework.context.annotation.*; import org.springframework.security.crypto.password.PasswordEncoder; import java.time.LocalDate; import java.util.List;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Configuration public class DataInitializer {
+ /**
+  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+  */
  @Bean CommandLineRunner seed(OperatingUnitRepository units,WorkRecordRepository tasks,ResourceRegisterRepository resources,ReviewRecordRepository reviews,UserRepository users,PasswordEncoder encoder){return args->{if(units.count()>0)return;
  var u1=units.save(new OperatingUnit("AR-MGMT","应收管理部","集团财务中心",360));var u2=units.save(new OperatingUnit("AR-EAST","华东应收组","华东财务中心",220));var u3=units.save(new OperatingUnit("AR-RISK","信用风险组","风险管理中心",140));
  var t1=tasks.save(new WorkRecord("CL-260817-068","CUST-0186","华东智造争议账款",u2,5,2,2,LocalDate.now(),WorkRecord.Status.RUNNING,"逾期75天+争议"));var t2=tasks.save(new WorkRecord("CL-260817-064","CUST-0264","远景零售付款承诺",u2,4,3,1,LocalDate.now(),WorkRecord.Status.RUNNING,"逾期32天+承诺"));var t3=tasks.save(new WorkRecord("CL-260817-059","CUST-0418","南辰科技到期提醒",u1,3,1,0,LocalDate.now().plusDays(1),WorkRecord.Status.RELEASED,"逾期16天+提醒"));var t4=tasks.save(new WorkRecord("CL-260816-051","CUST-0082","海洲物流大额催收",u3,6,4,2,LocalDate.now(),WorkRecord.Status.RUNNING,"逾期61天+面谈"));

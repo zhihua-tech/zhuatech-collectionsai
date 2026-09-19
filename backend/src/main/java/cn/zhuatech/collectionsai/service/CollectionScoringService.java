@@ -11,9 +11,16 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-/** 对逾期、金额、承诺与争议信号进行可解释催收分级。 */
+/**
+ * 对逾期、金额、承诺与争议信号进行可解释催收分级。
+ *
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class CollectionScoringService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result score(Request request) {
         int risk = Math.min(45, request.overdueDays());
         if (request.amount().compareTo(new BigDecimal("100000")) >= 0) risk += 20;
@@ -37,11 +44,17 @@ public class CollectionScoringService {
             actions, request.amount());
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String invoiceNo, @Min(0) int overdueDays,
                           @DecimalMin("0.01") BigDecimal amount,
                           @Min(0) @Max(10) int brokenPromiseCount,
                           @Min(0) int lastContactDays,
                           boolean disputeOpen, boolean strategicCustomer) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String invoiceNo, int riskScore, String riskTier, String strategy,
                          String nextTouch, boolean humanApprovalRequired,
                          List<String> actions, BigDecimal exposureAmount) {}
