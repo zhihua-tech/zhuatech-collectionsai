@@ -1,5 +1,7 @@
 # 知华应收催收智能体（CollectionsAI）
 
+[简体中文](README.md) | [English](README.en.md)
+
 **逾期金额很多，但催收时间有限。CollectionsAI 用可解释规则帮助团队决定“先处理谁、为什么、下一步做什么”。**
 
 [知华科技官网](https://www.zhuatech.cn/) ｜ [API 文档](docs/api.md) ｜ [架构说明](docs/architecture.md) ｜ [部署指南](deploy/README.md)
